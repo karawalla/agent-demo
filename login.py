@@ -24,20 +24,3 @@ def get_forecast(lat,lon):
     response = requests.get(url)
     data = response.json()
     return data
-
-def main():
-    lat = "40.730610"
-    lon = "-73.935242"
-    data = get_weather(lat,lon)
-    print(data)
-    print(data["current"]["weather"][0]["main"])
-    print(data["current"]["weather"][0]["description"])
-    print(data["current"]["weather"][0]["icon"])
-    print(data["current"]["temp"])
-    print(data["current"]["feels_like"])
-    print(data["current"]["humidity"])
-    print(data["current"]["wind_speed"])
-    print(data["current"]["wind_deg"])
-    print(data["current"]["clouds"])
-    print(data["current"]["pop"])
-    
