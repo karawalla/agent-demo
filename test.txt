@@ -1,0 +1,12 @@
+
+```code
+from pydantic_ai import Agent
+from pydantic_ai.models.openai import OpenAIModel
+
+model = OpenAIModel(
+    'anthropic/claude-3.5-sonnet',
+    base_url='https://openrouter.ai/api/v1',
+    api_key='your-openrouter-api-key',
+)
+agent = Agent(model)
+...
