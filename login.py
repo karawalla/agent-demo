@@ -25,7 +25,3 @@ def get_forecast(lat,lon):
     data = response.json()
     return data
 
-#add tests
-def get_temperature(weather):
-    temp = weather["current"]["temp"]
-    return temp
