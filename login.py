@@ -25,3 +25,11 @@ def get_forecast(lat,lon):
     data = response.json()
     return data
 
+def get_weather_for_city(city):
+    api_key = os.environ.get("API_KEY")
+    base_url = "https://api.openweathermap.org/data/2.5/weather?"
+    complete_url = base_url + "appid=" + api_key + "&q=" + city
+    response = requests.get(complete_url)
+    data = response.json()
+
+
