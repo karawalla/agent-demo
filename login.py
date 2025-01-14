@@ -32,4 +32,20 @@ def get_weather_for_city(city):
     response = requests.get(complete_url)
     data = response.json()
 
-
+def get_ten_day_forecast(lat, lon):
+    """
+    Get a 10-day weather forecast for the specified latitude and longitude.
+    
+    Args:
+        lat (float): Latitude of the location
+        lon (float): Longitude of the location
+        
+    Returns:
+        dict: JSON response containing 10-day forecast data
+    """
+    api_key = os.environ.get("API_KEY")
+    url = f"https://api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt=10&units=imperial&appid={api_key}"
+    
+    response = requests.get(url)
+    data = response.json()
+    return data
